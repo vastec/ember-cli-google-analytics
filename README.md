@@ -73,6 +73,7 @@ If none of the cookie settings are set (they are left nullish) then `'auto'` wil
 
 * `git clone git@github.com:pgrippi/ember-cli-google-analytics.git`
 * `npm install`
+* `npm test` (Runs `ember try:testall` to test your addon against multiple Ember versions)
 * `ember test`
 * `ember test --server`
 
