@@ -1,6 +1,6 @@
 {
-  "name": "ember-cli-google-analytics",
-  "version": "1.6.0",
+  "name": "ember-cli-multi-google-analytics",
+  "version": "1.7.0",
   "description": "Ember CLI addon that adds the Google Analytics tracking code",
   "directories": {
     "doc": "doc",
@@ -13,16 +13,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/pgrippi/ember-cli-google-analytics.git"
+    "url": "git://github.com/vastec/ember-cli-multi-google-analytics.git"
   },
   "bugs": {
-    "url": "https://github.com/pgrippi/ember-cli-google-analytics/issues"
+    "url": "https://github.com/vastec/ember-cli-multi-google-analytics/issues"
   },
-  "homepage": "https://github.com/pgrippi/ember-cli-google-analytics",
+  "homepage": "https://github.com/vastec/ember-cli-multi-google-analytics.git",
   "engines": {
     "node": ">= 0.10.0"
   },
-  "author": "Peter Grippi",
+  "author": "Tomasz Nieżurawski",
+  "contributors": [
+    "Peter Grippi",
+    "Tomasz Nieżurawski"
+  ],
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "2.2.0",
@@ -50,7 +54,8 @@
     "ember-addon",
     "ember-cli",
     "google",
-    "analytics"
+    "analytics",
+    "multi"
   ],
   "ember-addon": {
     "configPath": "tests/dummy/config"
