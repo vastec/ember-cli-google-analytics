@@ -1,4 +1,5 @@
 [![npm version](https://badge.fury.io/js/ember-cli-multi-google-analytics.svg)](https://badge.fury.io/js/ember-cli-multi-google-analytics)
+[![Build Status](https://travis-ci.org/vastec/ember-cli-multi-google-analytics.svg?branch=master)](https://travis-ci.org/vastec/ember-cli-multi-google-analytics)
 ![ember-cli version](https://img.shields.io/badge/ember--cli-3.1.4-orange.svg)
 
 ember-cli-multi-google-analytics
