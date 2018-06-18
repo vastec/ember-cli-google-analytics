@@ -1,20 +1,22 @@
-import Ember from 'ember';
+import { get, getWithDefault } from '@ember/object';
+import { on } from '@ember/object/evented';
+import Mixin from '@ember/object/mixin';
 import ENV from '../config/environment';
 
-export default Ember.Mixin.create({
-  beforePageviewToGA: function (ga) {
+export default Mixin.create({
+  beforePageviewToGA: function (/*ga*/) {
 
   },
 
-  pageviewToGA: Ember.on('didTransition', function(page, title) {
-    var page = page ? page : this.get('url');
-    var title = title ? title : this.get('url');
+  pageviewToGA: on('didTransition', function(page, title) {
+    page = page ? page : this.get('url');
+    title = title ? title : this.get('url');
 
-    if (Ember.get(ENV, 'googleAnalytics.webPropertyId') != null) {
-      var trackerType = Ember.getWithDefault(ENV, 'googleAnalytics.tracker', 'analytics.js');
+    if (get(ENV, 'googleAnalytics.webPropertyId') != null) {
+      let trackerType = getWithDefault(ENV, 'googleAnalytics.tracker', 'analytics.js');
 
       if (trackerType === 'analytics.js') {
-        var globalVariable = Ember.getWithDefault(ENV, 'googleAnalytics.globalVariable', 'ga');
+        let globalVariable = getWithDefault(ENV, 'googleAnalytics.globalVariable', 'ga');
 
         this.beforePageviewToGA(window[globalVariable]);
 
