@@ -41,6 +41,14 @@ module.exports = function(environment) {
 
     ENV.APP.rootElement = '#ember-testing';
     ENV.APP.autoboot = false;
+
+    ENV.googleAnalytics = {
+      webPropertyId: 'DEFAULT TRACKER ID',
+      additionalTrackers: [{
+        webPropertyId: 'ADDITIONAL TRACKER ID',
+        name: 'trackerName'
+      }]
+    };
   }
 
   if (environment === 'production') {

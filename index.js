@@ -1,7 +1,7 @@
 'use strict';
 
-var merge = require('lodash-node/compat/objects/merge');
-var googleAnalyticsConfigDefaults = {
+let merge = require('lodash-node/compat/objects/merge');
+let googleAnalyticsConfigDefaults = {
   globalVariable: 'ga',
   tracker: 'analytics.js',
   webPropertyId: null,
@@ -33,7 +33,7 @@ function stringifyGaConfig(gaConfig) {
 }
 
 function analyticsTrackingCode(config) {
-  var scriptArray,
+  let scriptArray,
       displayFeaturesString,
       gaConfig = {};
 
@@ -48,7 +48,7 @@ function analyticsTrackingCode(config) {
   }
 
   scriptArray = [
-    "<script>",
+    "<script id='ember-cli-multi-google-analytics'>",
     "(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){",
     "(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),",
     "m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)",
@@ -71,10 +71,10 @@ function analyticsTrackingCode(config) {
 }
 
 function gaTrackingCode(config) {
-  var scriptArray;
+  let scriptArray;
 
   scriptArray = [
-    "<script>",
+    "<script id='ember-cli-multi-google-analytics'>",
     "var _gaq = _gaq || [];",
     "_gaq.push(['_setAccount', '" + config.webPropertyId + "']);",
     "_gaq.push(['_trackPageview']);",
@@ -97,10 +97,10 @@ function gaTrackingCode(config) {
 module.exports = {
   name: 'ember-cli-google-analytics',
   contentFor: function(type, config) {
-    var googleAnalyticsConfig = merge({}, googleAnalyticsConfigDefaults, config.googleAnalytics || {});
+    let googleAnalyticsConfig = merge({}, googleAnalyticsConfigDefaults, config.googleAnalytics || {});
 
     if (type === 'head' && googleAnalyticsConfig.webPropertyId != null) {
-      var content;
+      let content;
 
       if (googleAnalyticsConfig.tracker === 'analytics.js') {
         content = analyticsTrackingCode(googleAnalyticsConfig);
